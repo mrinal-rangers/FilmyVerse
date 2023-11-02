@@ -3,6 +3,7 @@ import Card from './Card'
 import { useState } from 'react'
 
 const [loading,setLoading] =useState(true);
+//say hi
 
 const Cards = () => {
   return (
@@ -14,7 +15,7 @@ const Cards = () => {
       })
     }
 
-    
+
     </div>
   );
 };
