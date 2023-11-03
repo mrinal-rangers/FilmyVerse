@@ -8,7 +8,7 @@ const Card = ({e,i}) => {
         <h1 className='text-xs max-w-xs md:text-l ' ><span className='text-red-500'>Title :</span> {e.title}</h1>
         <h1 className='flex ' ><span className='text-red-500 mr-1'>Ratings :</span>
           <ReactStars
-            value='5'
+            value={e.rating}
             edit={false}
           />
         </h1>
