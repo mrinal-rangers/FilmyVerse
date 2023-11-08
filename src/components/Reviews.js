@@ -16,6 +16,7 @@ const Reviews = ({id,prevRating,users}) => {
     const [loading2,setLoading2]= useState(false);
     const[form,setForm]=useState("");
     const[data,setData]=useState([]);
+    const[newAdded,setNewAdded]=useState(0);
 
     const sendReview = async ()=>{
         setLoading(true);
@@ -36,6 +37,9 @@ const Reviews = ({id,prevRating,users}) => {
                 rating : (prevRating*users + rating)/(users+1),
                 users:users+1
             })
+            setRating(0);
+            setForm("");
+            setNewAdded(newAdded+1);
 
             swal({
                 title:"Review Sent",
@@ -57,8 +61,9 @@ const Reviews = ({id,prevRating,users}) => {
     useEffect(()=>{
         async function getData(){
             setLoading2(true);
+            setData([]);
             let quer =query(reviewsRef,where('movie_id','==',id));
-            const querySnapshot = await getDocs(quer);
+            const querySnapshot = await g etDocs(quer);
 
             querySnapshot.forEach((doc)=>{
                 setData((prev)=>[...prev,doc.data()]);
@@ -67,7 +72,7 @@ const Reviews = ({id,prevRating,users}) => {
             setLoading2(false);
         }
         getData();
-    },[])
+    },[newAdded])
 
   return (
     <div className='mt-8 w-full border-t-2 pt-10 border-gray-700'>

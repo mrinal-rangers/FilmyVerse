@@ -69,7 +69,7 @@ const AddMovie = () => {
         </div>
         <div class="p-2 w-full">
           <div class="relative">
-            <label for="message" class="leading-7 text-sm text-gray-300">Image</label>
+            <label for="message" class="leading-7 text-sm text-gray-300">Image Link</label>
             <input
             value={form.image}
             onChange={(e)=>setForm({...form,image: e.target.value})}
