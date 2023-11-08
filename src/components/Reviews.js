@@ -63,7 +63,7 @@ const Reviews = ({id,prevRating,users}) => {
             setLoading2(true);
             setData([]);
             let quer =query(reviewsRef,where('movie_id','==',id));
-            const querySnapshot = await g etDocs(quer);
+            const querySnapshot = await getDocs(quer);
 
             querySnapshot.forEach((doc)=>{
                 setData((prev)=>[...prev,doc.data()]);
