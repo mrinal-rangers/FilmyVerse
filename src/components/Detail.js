@@ -42,6 +42,8 @@ const Detail = () => {
           />
         <p className='text-xl mt-6 '>{data.description}</p>
         <Reviews id={id} prevRating={data.rating} users={data.users}/>
+
+
     </div>
      </>  }
     </div>
