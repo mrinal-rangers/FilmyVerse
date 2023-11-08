@@ -20,10 +20,10 @@ const Reviews = ({id,prevRating,users}) => {
 
     const sendReview = async ()=>{
         setLoading(true);
-        try{
-            if(useAppState.login===false) {
+          if(useAppState.login===false) {
                 navigate('/login');
             }
+        try{
             await addDoc(reviewsRef,{
                 movie_id:id,
                 name: useAppState.userName,
